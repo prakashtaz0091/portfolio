@@ -7,7 +7,7 @@
   font-family: 'Roboto', sans-serif;
   text-shadow: 0 1px 2px #02bdff;
 
-  --backgroundColor: rgba(12, 3, 31, 0.821);
+  --backgroundColor: rgba(14, 2, 41, 0.821);
   --borderColor: #02bdff;
   --hoverBorderColor: #02bdff;
 
@@ -22,7 +22,7 @@ body::before {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 200vh;
   background-image: radial-gradient(circle farthest-corner at 12.3% 19.3%, rgb(7, 8, 73) 0%, rgb(84, 111, 184) 100.2%);
   z-index: -1;
 }
@@ -37,6 +37,7 @@ body::before {
   /* background-color: rgba(0, 0, 92, 0.897); */
   color: var(--light-blue);
   height: 100vh;
+  max-width: 400px;
   z-index: 1000;
 
 }
@@ -146,6 +147,7 @@ body::before {
   cursor: pointer;
 
 }
+
 
 
 
@@ -434,7 +436,6 @@ body::before {
 /* intro section */
 
 .main {
-  border: 2px solid red;
   position: absolute;
   top: 0;
   left: 0;
@@ -472,7 +473,7 @@ body::before {
   justify-content: center;
   border-radius: 4px;
   backdrop-filter: blur(5px);
-  box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.514);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.514);
 
 }
 
@@ -507,21 +508,6 @@ body::before {
   clip-path: polygon(12% 10%, 17% 10%, 25% 0, 100% 0, 100% 75%, 90% 80%, 90% 100%, 80% 90%, 80% 70%, 75% 65%, 75% 20%, 45% 20%, 40% 25%, 0 25%);
 }
 
-.upper-tri {
-  position: absolute;
-  top: 6%;
-  right: 25px;
-  border: 40px solid;
-  border-color: var(--backgroundColor) var(--backgroundColor) transparent transparent;
-}
-
-.lower-tri {
-  position: absolute;
-  top: calc(6% + 250px - 76px);
-  left: 27px;
-  border: 40px solid;
-  border-color: transparent transparent var(--backgroundColor) var(--backgroundColor);
-}
 
 
 
@@ -535,13 +521,30 @@ body::before {
 }
 
 
+
 .card-img::before {
   content: "";
   position: absolute;
-  height: inherit;
-  width: inherit;
-  background-color: rgba(0, 123, 206, 0.349);
+  height: 50px;
+  width: 50px;
+  top: -2px;
+  right: -4px;
+  border: 30px solid;
+  border-color: var(--backgroundColor) var(--backgroundColor) transparent transparent;
 }
+
+.card-img::after {
+  content: "";
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  bottom: -4px;
+  left: -2px;
+  border: 30px solid;
+  border-color: transparent transparent var(--backgroundColor) var(--backgroundColor);
+}
+
+
 
 
 .card-img>img {
@@ -639,4 +642,349 @@ body::before {
 
 /* intro section card ends */
 
+
+
+
+
+/* arc-reactor */
+.arc-reactor-wrapper {
+  position: absolute;
+  right: 20%;
+}
+
+.arc-reactor {
+  position: relative;
+
+}
+
+.circle-glow {
+  box-shadow: 0 0 10px 2px white;
+
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+
+}
+
+.circle-1 {
+  height: 250px;
+  width: 250px;
+  border: 5px solid;
+  border-color: transparent var(--borderColor) transparent var(--borderColor);
+  animation: rotate-right-270deg 2s infinite alternate;
+
+}
+
+.circle-2 {
+  inset: 0.5em;
+  border: 10px solid;
+  border-color: var(--borderColor) transparent var(--borderColor) var(--borderColor);
+  animation: rotate-left-50deg 5s infinite alternate-reverse;
+
+}
+
+.circle-3 {
+  inset: 0.5em;
+  border: 1px solid;
+  border-color: transparent var(--borderColor) var(--borderColor) transparent;
+  animation: rotate-right 2s infinite reverse;
+
+}
+
+.circle-4 {
+  inset: 0.5em;
+  border: 7px solid;
+  border-color: var(--borderColor) var(--borderColor) var(--borderColor) transparent;
+  animation: rotate-left 8s infinite linear;
+
+
+}
+
+.circle-5 {
+  inset: 0.5em;
+  border: 4px solid;
+  border-color: transparent transparent transparent var(--borderColor);
+  animation: rotate-left 3s infinite alternate-reverse;
+
+}
+
+.circle-6 {
+  inset: 0.5em;
+  border: 12px solid;
+  border-color: transparent var(--borderColor) transparent transparent;
+  animation: rotate-right 10s infinite linear;
+
+}
+
+.circle-7 {
+  inset: 0.5em;
+  border: 2px solid;
+  border-color: var(--borderColor) transparent var(--borderColor) transparent;
+  animation: rotate-right 2s infinite alternate-reverse;
+}
+
+
+.triangle {
+  position: absolute;
+  inset: 0.5em 0.7em;
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 43px solid rgba(255, 255, 255, 0.925);
+}
+
+
+
+
+
+@keyframes rotate-right {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes rotate-left {
+  from {
+    transform: rotate(359deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes rotate-left-50deg {
+  from {
+    transform: rotate(50deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes rotate-right-270deg {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(270deg);
+  }
+}
+
+
+
+/* arc-reactor ends */
+
+
+/* tech-buttons */
+
+.tech-button {
+  height: 60px;
+  width: 300px;
+  margin: 5px 10px;
+  color: var(--borderColor);
+  font-size: 2rem;
+  position: relative;
+  cursor: pointer;
+  clip-path: polygon(-50% 0 , 69% 0, 69% 100%,-50% 100%);
+
+}
+
+.tech-button:hover {
+  text-shadow: 0 0 10px;
+  letter-spacing: 0.1em;
+  transition: 0.5s;
+}
+
+
+.tech-button::before {
+  content: "";
+  height: inherit;
+  width: inherit;
+  position: absolute;
+  left: -100px;
+  background-color: var(--borderColor);
+  clip-path: polygon(0 0, 10% 0, 20% 50%, 20% 70%, 22% 80%, 70% 80%, 75% 70%, 85% 70%, 87% 80%, 100% 80%, 98% 85%, 95% 85%, 92% 100%, 84% 100%, 80% 75%, 76% 75%, 72% 84%, 60% 84%, 56% 100%, 18% 100%, 12% 71%, 12% 51%, 10% 40%, 10% 20%, 9% 5%, 2% 5%);
+}
+
+
+/* tech-buttons ends */
+
+
+/* tech-buttons content section */
+.tech-button-content {
+  margin-top: 50px;
+  height: 400px;
+  width: 71%;
+  position: relative;
+  background-color: rgba(173, 216, 230, 0.473);
+  clip-path: polygon(10% 0, 55% 0, 58% 5%, 58% 35%, 70% 55%, 81% 55%, 85% 50%, 95% 50%, 100% 55%, 100% 85%, 95% 95%, 70% 95%, 65% 100%, 30% 100%, 25% 90%, 10% 90%, 0 80%, 0 50%, 2% 45%, 2% 10%  );
+
+  backdrop-filter: blur(5px);
+
+}
+
+
+
+
+
+/* tech-buttons content section ends */
+
+
 /* main section ends */
+
+
+
+
+
+
+
+/* custom media queries */
+
+@media only screen and (max-width: 576px) {
+
+  .sidebar {
+    max-width: 100vw;
+  }
+
+
+  .first-section {
+    margin-top: 30px;
+    margin-left: 0;
+    /* display: flex;
+    flex-wrap: wrap; */
+  }
+
+
+  .card-wrapper {
+    height: 400px;
+    width: 300px;
+
+  }
+
+  .card-img {
+    height: 133.32px;
+    width: 250px;
+  }
+
+
+  .card-body {
+
+    padding-left: 8px;
+    top: 40%;
+    border: 15px solid;
+    border-color: transparent transparent transparent var(--borderColor);
+  }
+
+  .desc {
+    font-size: 12px;
+  }
+
+  .lower-left-bottom {
+
+    border: 35px solid;
+    border-color: transparent transparent var(--borderColor) var(--borderColor);
+
+
+  }
+
+  .footer-line {
+    width: 200px;
+  }
+
+  .sm-screen-center {
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+  }
+
+  /* small screen arc reactor */
+  .circle-1 {
+    height: 150px;
+    width: 150px;
+  }
+
+  .circle-2 {
+    border: 8px solid;
+    border-color: var(--borderColor) transparent var(--borderColor) var(--borderColor);
+  }
+
+
+  .circle-4 {
+    border: 5px solid;
+    border-color: var(--borderColor) var(--borderColor) var(--borderColor) transparent;
+  }
+
+  .circle-5 {
+    border: 2px solid;
+    border-color: transparent transparent transparent var(--borderColor);
+  }
+
+  .circle-6 {
+    border: 10px solid;
+    border-color: transparent var(--borderColor) transparent transparent;
+  }
+
+  .circle-7 {
+    border: 1px solid;
+    border-color: var(--borderColor) transparent var(--borderColor) transparent;
+    animation: rotate-right 2s infinite alternate-reverse;
+  }
+
+
+  .triangle {
+    display: none;
+  }
+
+  .arc-reactor-wrapper {
+    right: 45%;
+  }
+
+  /* small screen arc reactor */
+
+
+  /* small screen tech buttons */
+  .btns {
+    margin-left: 50px;
+
+  }
+
+  .tech-button {
+    height: 30px;
+    width: 150px;
+    margin: 5px 10px;
+    font-size: 1.3rem;
+  }
+
+  .tech-button::before {
+    left: -40px;
+  }
+
+
+  /* small screen tech buttons ends */
+
+
+}
+
+
+@media only screen and (max-width: 992px) {
+  .top-nav-wrapper {
+    display: none;
+  }
+
+
+
+}
+
+
+
+/* custom media queries ends */
